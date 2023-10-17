@@ -9,12 +9,17 @@ M.init = function(theme)
    -- set the global theme, used at various places like theme switcher, highlights
    vim.g.nvchad_theme = theme
 
-   local present, base16 = pcall(require, "base16")
+   local present, base46 = pcall(require, "base46")
 
    if present then
-      -- first load the base16 theme
-      base16(base16.themes(theme), true)
-
+      -- first load the base46 theme
+      local opts = {
+         base = "base46",
+         theme = theme,
+         transparency = false,
+      }
+      base46.load_theme(opts)
+      
       -- unload to force reload
       package.loaded["colors.highlights" or false] = nil
       -- then load the highlights
