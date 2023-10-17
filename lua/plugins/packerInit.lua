@@ -11,7 +11,7 @@ if not present then
    vim.fn.system {
       "git",
       "clone",
-      "https://github.com/wbthomason/packer.nvim",
+      "git@github.com:wbthomason/packer.nvim",
       "--depth",
       "20",
       packer_path,
@@ -36,6 +36,7 @@ packer.init {
    },
    git = {
       clone_timeout = 6000, -- seconds
+      default_url_format = 'git@github.com:%s.git'
    },
    auto_clean = true,
    compile_on_sync = true,
