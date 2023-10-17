@@ -24,6 +24,15 @@ customPlugins.add(function(use)
       "scrooloose/syntastic"
    }
 
+   use {
+     "neoclide/coc.nvim",
+     tag = "v0.0.53"
+   }
+
+   use {
+     "lastnight2022-cc/nvim-lsp-installer"
+   }
+
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event','cmd' fields)
