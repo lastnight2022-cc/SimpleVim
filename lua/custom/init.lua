@@ -15,6 +15,15 @@ customPlugins.add(function(use)
    use {
       "mhinz/vim-startify"
    }
+
+   use {
+      "scrooloose/nerdtree"
+   }
+
+   use {
+      "scrooloose/syntastic"
+   }
+
 end)
 
 -- NOTE: we heavily suggest using Packer's lazy loading (with the 'event','cmd' fields)
