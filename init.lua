@@ -23,3 +23,5 @@ if vim.fn.filereadable(vim.fn.stdpath "config" .. "/lua/custom/init.lua") == 1 t
    end
    return
 end
+
+vim.o.guifont = "ShureTechMono Nerd Font:h15"
