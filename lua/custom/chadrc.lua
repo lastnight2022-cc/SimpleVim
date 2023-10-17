@@ -14,7 +14,11 @@ M.options = {
 }
 
 M.plugins = {
-
+  options = {
+    lspconfig = {
+      setup_lspconf = "custom.config.lspconfig"
+    }
+  }
 }
 
 return M
