@@ -13,7 +13,7 @@ return packer.startup(function()
    -- this is arranged on the basis of when a plugin starts
 
    -- this is the nvchad core repo containing utilities for some features like theme swticher, no need to lazy load
-   use "Nvchad/extensions"
+   use "zjtomoon-cc/extensions"
    use "nvim-lua/plenary.nvim"
 
    use {
@@ -22,7 +22,7 @@ return packer.startup(function()
    }
 
    use {
-      "NvChad/nvim-base16.lua",
+      "zjtomoon-cc/base46.nvim",
       after = "packer.nvim",
       config = function()
          require("colors").init()
@@ -31,7 +31,7 @@ return packer.startup(function()
 
    use {
       "kyazdani42/nvim-web-devicons",
-      after = "nvim-base16.lua",
+      after = "base46.nvim",
       config = override_req("nvim_web_devicons", "plugins.configs.icons", "setup"),
    }
 
@@ -70,17 +70,6 @@ return packer.startup(function()
       "nvim-treesitter/nvim-treesitter",
       event = "BufRead",
       config = override_req("nvim_treesitter", "plugins.configs.treesitter", "setup"),
-   }
-
-   -- git stuff
-   use {
-      "lewis6991/gitsigns.nvim",
-      disable = not plugin_settings.status.gitsigns,
-      opt = true,
-      config = override_req("gitsigns", "plugins.configs.others", "gitsigns"),
-      setup = function()
-         require("core.utils").packer_lazy_load "gitsigns.nvim"
-      end,
    }
 
    -- lsp stuff
