@@ -25,11 +25,6 @@ customPlugins.add(function(use)
    }
 
    use {
-     "neoclide/coc.nvim",
-     tag = "v0.0.53"
-   }
-
-   use {
      "lastnight2022-cc/nvim-lsp-installer"
    }
 
