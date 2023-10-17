@@ -13,7 +13,7 @@ return packer.startup(function()
    -- this is arranged on the basis of when a plugin starts
 
    -- this is the nvchad core repo containing utilities for some features like theme swticher, no need to lazy load
-   use "zjtomoon-cc/extensions"
+   use "lastnight2022-cc/extensions"
    use "nvim-lua/plenary.nvim"
 
    use {
@@ -22,7 +22,7 @@ return packer.startup(function()
    }
 
    use {
-      "zjtomoon-cc/base46.nvim",
+      "lastnight2022-cc/base46.nvim",
       after = "packer.nvim",
       config = function()
          require("colors").init()
@@ -66,14 +66,7 @@ return packer.startup(function()
       config = override_req("nvim_colorizer", "plugins.configs.others", "colorizer"),
    }
 
-   use {
-      "nvim-treesitter/nvim-treesitter",
-      event = "BufRead",
-      config = override_req("nvim_treesitter", "plugins.configs.treesitter", "setup"),
-   }
-
    -- lsp stuff
-
    use {
       "neovim/nvim-lspconfig",
       module = "lspconfig",
@@ -191,27 +184,7 @@ return packer.startup(function()
    }
 
    -- file managing , picker etc
-   use {
-      "kyazdani42/nvim-tree.lua",
-      disable = not plugin_settings.status.nvimtree,
-      -- only set "after" if lazy load is disabled and vice versa for "cmd"
-      after = not plugin_settings.options.nvimtree.lazy_load and "nvim-web-devicons",
-      cmd = plugin_settings.options.nvimtree.lazy_load and { "NvimTreeToggle", "NvimTreeFocus" },
-      config = override_req("nvim_tree", "plugins.configs.nvimtree", "setup"),
-      setup = function()
-         require("core.mappings").nvimtree()
-      end,
-   }
 
-   use {
-      "nvim-telescope/telescope.nvim",
-      module = "telescope",
-      cmd = "Telescope",
-      config = override_req("telescope", "plugins.configs.telescope", "setup"),
-      setup = function()
-         require("core.mappings").telescope()
-      end,
-   }
    -- load user defined plugins
    require("core.customPlugins").run(use)
 end)
