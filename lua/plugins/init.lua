@@ -17,7 +17,7 @@ return packer.startup(function()
    use "nvim-lua/plenary.nvim"
 
    use {
-      "wbthomason/packer.nvim",
+      "lastnight2022-cc/packer.nvim",
       event = "VimEnter",
    }
 

@@ -11,7 +11,7 @@ if not present then
    vim.fn.system {
       "git",
       "clone",
-      "git@github.com:wbthomason/packer.nvim",
+      "git@github.com:lastnight2022-cc/packer.nvim",
       "--depth",
       "20",
       packer_path,
