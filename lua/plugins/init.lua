@@ -70,6 +70,7 @@ return packer.startup(function()
    -- lsp stuff
    use {
       "neovim/nvim-lspconfig",
+      tag = "v0.1.0",
       module = "lspconfig",
       opt = true,
       setup = function()

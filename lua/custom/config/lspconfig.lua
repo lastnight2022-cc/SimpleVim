@@ -1,8 +1,8 @@
 local M = {}
 
 M.setup_lsp = function(attach,capabilities) 
-  local lsp_installer = require "nvim-lsp-installer"
 
+  local lsp_installer = require "nvim-lsp-installer"
   lsp_installer.settings {
     ui = {
       icons = {
@@ -22,6 +22,13 @@ M.setup_lsp = function(attach,capabilities)
       },
       settings = {},
     }
+
+    if server.name == 'tsserver' then
+      opts.on_attach = function(client,bufnr)
+        client.resolved_capabilities.document_formatting = flase
+        vim.api.nvim_buf_set_keymap(bufnr,"n","<space>fm","<cmd>lua vim.lsp.buf.formatting()<CR>",{})
+      end
+    end
 
     server:setup(opts)
     vim.cmd [[do User LspAttachBuffers ]]
