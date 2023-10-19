@@ -67,6 +67,18 @@ return packer.startup(function()
       config = override_req("nvim_colorizer", "plugins.configs.others", "colorizer"),
    }
 
+   -- git stuff
+   use {
+      "lewis6991/gitsigns.nvim",
+      tag = "v0.3",
+      disable = not plugin_settings.status.gitsigns,
+      opt = true,
+      config = override_req("gitsigns", "plugins.configs.others", "gitsigns"),
+      setup = function()
+         require("core.utils").packer_lazy_load "gitsigns.nvim"
+      end,
+   }
+
    -- lsp stuff
    use {
       "lastnight2022-cc/nvim-lspconfig",
@@ -182,6 +194,25 @@ return packer.startup(function()
       config = override_req("nvim_comment", "plugins.configs.others", "comment"),
       setup = function()
          require("core.mappings").comment()
+      end,
+   }
+
+  use {
+      "nvim-treesitter/nvim-treesitter",
+      tag = "v0.7.2",
+      event = "BufRead",
+      config = override_req("nvim_treesitter", "plugins.configs.treesitter", "setup"),
+   }
+
+
+  use {
+      "nvim-telescope/telescope.nvim",
+      tag = "0.1.0",
+      module = "telescope",
+      cmd = "Telescope",
+      config = override_req("telescope", "plugins.configs.telescope", "setup"),
+      setup = function()
+         require("core.mappings").telescope()
       end,
    }
 

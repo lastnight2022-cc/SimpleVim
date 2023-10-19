@@ -14,6 +14,9 @@ M.options = {
 }
 
 M.plugins = {
+  status = {
+    dashboard = false,
+  },
   options = {
     lspconfig = {
       setup_lspconf = "custom.config.lspconfig"
