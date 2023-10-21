@@ -198,14 +198,6 @@ return packer.startup(function()
    }
 
   use {
-      "nvim-treesitter/nvim-treesitter",
-      tag = "v0.7.2",
-      event = "BufRead",
-      config = override_req("nvim_treesitter", "plugins.configs.treesitter", "setup"),
-   }
-
-
-  use {
       "nvim-telescope/telescope.nvim",
       tag = "0.1.0",
       module = "telescope",

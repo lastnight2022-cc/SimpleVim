@@ -25,6 +25,14 @@ customPlugins.add(function(use)
    }
 
    use {
+     "SirVer/ultisnips"
+   }
+
+   use {
+     "honza/vim-snippets"
+   }
+
+   use {
      "lastnight2022-cc/nvim-lsp-installer"
    }
 
