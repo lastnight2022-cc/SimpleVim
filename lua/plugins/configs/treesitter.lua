@@ -6,8 +6,8 @@ end
 
 local default = {
    ensure_installed = {
-      "lua",
-      "vim",
+--      "lua",
+--      "vim",
    },
    highlight = {
       enable = true,

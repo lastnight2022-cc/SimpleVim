@@ -208,6 +208,13 @@ return packer.startup(function()
       end,
    }
 
+   use {
+      "nvim-treesitter/nvim-treesitter",
+      tag = "v0.8.0",
+      event = "BufRead",
+      config = override_req("nvim_treesitter", "plugins.configs.treesitter", "setup"),
+   }
+
    -- file managing , picker etc
 
    -- load user defined plugins

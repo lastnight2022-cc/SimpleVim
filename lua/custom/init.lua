@@ -24,15 +24,7 @@ customPlugins.add(function(use)
       "scrooloose/syntastic"
    }
 
-   use {
-     "SirVer/ultisnips"
-   }
-
-   use {
-     "honza/vim-snippets"
-   }
-
-   use {
+  use {
      "lastnight2022-cc/nvim-lsp-installer"
    }
 
